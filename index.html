@@ -1,97 +1,93 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pré-inscrição – BloxVerso Con</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Roboto', sans-serif;
       background-color: #0d0d0d;
       color: #fff;
+      font-family: 'Roboto', sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
+      margin: 0;
+      padding: 20px;
     }
 
     .container {
       background-color: #1a1a1a;
       padding: 40px;
-      border-radius: 8px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      max-width: 500px;
       width: 100%;
-      max-width: 480px;
-      box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
     }
 
     h1 {
       text-align: center;
-      color: #ffc400;
-      margin-bottom: 32px;
-    }
-
-    input, select, button {
-      width: 100%;
-      padding: 14px;
-      margin-bottom: 16px;
-      border: none;
-      border-radius: 4px;
-      font-size: 16px;
+      margin-bottom: 30px;
+      color: #ffcc00;
     }
 
     input, select {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 5px;
       background-color: #333;
       color: #fff;
+      font-size: 14px;
     }
 
     input::placeholder {
       color: #aaa;
     }
 
+    label {
+      display: flex;
+      align-items: flex-start;
+      font-size: 14px;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+
+    input[type="checkbox"] {
+      margin-right: 10px;
+      margin-top: 4px;
+    }
+
     button {
-      background-color: #ffc400;
+      width: 100%;
+      padding: 14px;
+      background-color: #ffcc00;
+      border: none;
+      border-radius: 5px;
       color: #000;
       font-weight: bold;
+      font-size: 16px;
       cursor: pointer;
-      transition: background-color 0.3s;
     }
 
     button:hover {
       background-color: #e6b800;
-    }
-
-    label {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 14px;
-      line-height: 1.4;
-      margin-bottom: 24px;
-    }
-
-    span {
-      color: #fff;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Pré-inscrição BloxVerso</h1>
-
-    <form name="inscricao" method="POST" data-netlify="true" action="obrigado.html">
-      <!-- Campos ocultos obrigatórios Netlify -->
-      <input type="hidden" name="form-name" value="inscricao">
-
-      <input type="text" name="nome" placeholder="Nome completo" required>
-      <input type="email" name="email" placeholder="E-mail" required>
-      <input type="text" name="cidade" placeholder="Cidade" required>
-      <input type="tel" name="whatsapp" placeholder="WhatsApp com DDD" required
-        pattern="^\(?\d{2}\)?[\s-]?\d{4,5}-?\d{4}$"
-        title="Digite um número válido com DDD">
-
+    <form name="inscricao" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/obrigado.html">
+      <input type="hidden" name="form-name" value="inscricao" />
+      <input type="text" name="nome" placeholder="Nome completo" required />
+      <input type="email" name="email" placeholder="E-mail" required />
+      <input type="text" name="cidade" placeholder="Cidade" required />
+      <input type="tel" name="whatsapp" placeholder="WhatsApp com DDD" required pattern="^(\(?\d{2}\)?)[\s-]?\d{4,5}-?\d{4}$" title="Digite um número válido com DDD" />
+      
       <select name="categoria" required>
         <option value="">Selecione a categoria</option>
         <option value="visitante">Visitante</option>
@@ -100,11 +96,11 @@
         <option value="apoiador">Apoiador</option>
       </select>
 
-      <input type="text" name="roblox" placeholder="Link do perfil Roblox (opcional)">
+      <input type="text" name="roblox" placeholder="Link do perfil Roblox (opcional)" />
 
       <label>
-        <input type="checkbox" name="consentimento" required>
-        <span>Autorizo o uso dos dados fornecidos exclusivamente para personalização da minha experiência no evento.</span>
+        <input type="checkbox" name="consentimento" required />
+        Autorizo o uso dos dados fornecidos exclusivamente para personalização da minha experiência no evento.
       </label>
 
       <button type="submit">Enviar inscrição</button>
