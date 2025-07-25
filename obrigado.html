@@ -2,61 +2,62 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <title>Inscrição confirmada – BloxVerso Con</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formulário de Inscrição</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f8f8f8;
-      padding: 40px;
+      background-color: #0d0d0d;
+      color: #fff;
+      font-family: 'Roboto', sans-serif;
       display: flex;
       justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 20px;
     }
 
-    form {
-      background: #fff;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      max-width: 400px;
+    .mensagem {
+      background-color: #1a1a1a;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 24px rgba(255, 255, 255, 0.08);
+      max-width: 480px;
       width: 100%;
     }
 
-    input, button {
-      width: 100%;
+    h1 {
+      color: #ffd700;
       margin-bottom: 20px;
-      padding: 12px;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-      font-size: 16px;
+      font-size: 1.8rem;
     }
 
-    button {
-      background-color: #222;
-      color: #fff;
-      border: none;
-      cursor: pointer;
+    p {
+      font-size: 1rem;
+      color: #ddd;
+      margin-bottom: 20px;
     }
 
-    button:hover {
-      background-color: #000;
+    a {
+      color: #ffd700;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 20px;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-
-  <form name="inscricao" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="obrigado.html">
-    <!-- Campo oculto para ativar o Netlify Forms -->
-    <input type="hidden" name="form-name" value="inscricao">
-    <input type="hidden" name="bot-field">
-
-    <h2>Inscreva-se</h2>
-
-    <input type="text" name="nome" placeholder="Nome completo" required>
-    <input type="email" name="email" placeholder="E-mail" required>
-
-    <button type="submit">Enviar</button>
-  </form>
-
+  <div class="mensagem">
+    <h1>Pré-inscrição confirmada!</h1>
+    <p>Você está oficialmente pré-inscrito no <strong>BloxVerso Con</strong>.</p>
+    <p>Em breve entraremos em contato com mais informações pelo WhatsApp cadastrado.</p>
+    <a href="index.html">← Voltar ao início</a>
+  </div>
 </body>
 </html>
