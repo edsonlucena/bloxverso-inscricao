@@ -78,18 +78,12 @@
   <body>
     <div class="container">
       <h1>Pré‑inscrição – BloxVerso Con</h1>
-
-      <!-- Formulário principal -->
       <form
         id="pre-inscricao-form"
         name="pre-inscricao"
         method="POST"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
+        action="/.netlify/functions/form-handler"
       >
-        <input type="hidden" name="form-name" value="pre-inscricao" />
-        <input type="hidden" name="redirect" value="/obrigado.html" />
-
         <label for="nome">Nome completo</label>
         <input type="text" id="nome" name="nome" required />
 
@@ -130,55 +124,5 @@
         <button type="submit">Enviar pré‑inscrição</button>
       </form>
     </div>
-
-    <!-- Form shadow para detecção pelo Netlify Forms -->
-    <form
-      name="pre-inscricao"
-      method="POST"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
-      hidden
-    >
-      <input type="hidden" name="form-name" value="pre-inscricao" />
-      <input type="hidden" name="redirect" value="/obrigado.html" />
-      <input type="text" name="nome" />
-      <input type="tel" name="whatsapp" />
-      <input type="email" name="email" />
-      <input type="text" name="cidade" />
-      <input type="number" name="idade" />
-      <input type="text" name="perfil_roblox" />
-      <input type="text" name="perfil_instagram" />
-      <input type="text" name="perfil_tiktok" />
-      <input type="checkbox" name="consentimento" />
-      <div hidden>
-        <label>
-          Não preencha este campo: <input name="bot-field" />
-        </label>
-      </div>
-    </form>
-
-    <!-- Fallback JavaScript para submissão e redirecionamento -->
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        var form = document.getElementById('pre-inscricao-form');
-        form.addEventListener('submit', function (e) {
-          e.preventDefault();
-          var body = new URLSearchParams(new FormData(form)).toString();
-          fetch('/', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            body: body
-          })
-            .then(function () {
-              window.location.href = '/obrigado.html';
-            })
-            .catch(function (err) {
-              console.error('Erro no Netlify Forms:', err);
-            });
-        });
-      });
-    </script>
   </body>
 </html>
