@@ -17,7 +17,6 @@
         margin: 0;
         padding: 20px;
       }
-
       .container {
         background-color: #1a1a1a;
         padding: 40px;
@@ -26,20 +25,17 @@
         max-width: 500px;
         box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
       }
-
       h1 {
         font-size: 28px;
         margin-bottom: 20px;
         text-align: center;
         color: #ffe600;
       }
-
       label {
         display: block;
         margin-bottom: 10px;
         font-weight: bold;
       }
-
       input, select {
         width: 100%;
         padding: 10px;
@@ -48,19 +44,16 @@
         border-radius: 5px;
         font-size: 14px;
       }
-
       .checkbox-container {
         margin-bottom: 20px;
         display: flex;
         align-items: flex-start;
         font-size: 14px;
       }
-
       .checkbox-container input {
         margin-right: 10px;
         margin-top: 3px;
       }
-
       button {
         background-color: #ffe600;
         color: #000;
@@ -73,7 +66,6 @@
         font-size: 16px;
         transition: background-color 0.3s ease;
       }
-
       button:hover {
         background-color: #fff200;
       }
@@ -119,5 +111,18 @@
         <button type="submit">Enviar pré-inscrição</button>
       </form>
     </div>
+
+    <!-- Form shadow para detecção do Netlify Forms -->
+    <form name="pre-inscricao" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="nome" />
+      <input type="tel" name="whatsapp" />
+      <input type="email" name="email" />
+      <input type="text" name="cidade" />
+      <input type="number" name="idade" />
+      <input type="text" name="perfil_roblox" />
+      <input type="text" name="perfil_instagram" />
+      <input type="text" name="perfil_tiktok" />
+      <input type="checkbox" name="consentimento" />
+    </form>
   </body>
 </html>
