@@ -3,27 +3,106 @@
 <head>
   <meta charset="UTF-8">
   <title>Inscrição – BloxVerso Con</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: Arial; margin: 30px; }
-    form { max-width: 500px; margin: auto; display: flex; flex-direction: column; gap: 10px; }
-    input, select, button { padding: 10px; font-size: 16px; }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #0d0d0d;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: #1a1a1a;
+      padding: 30px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #ffcc00;
+    }
+
+    input, select, button {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    input, select {
+      background: #333;
+      color: #fff;
+    }
+
+    button {
+      background-color: #ffcc00;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #e6b800;
+    }
+
+    label {
+      font-size: 14px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    label input[type="checkbox"] {
+      margin-top: 4px;
+    }
+
+    @media (max-width: 500px) {
+      .container {
+        padding: 20px;
+      }
+    }
   </style>
 </head>
 <body>
-  <h1>Inscreva-se no BloxVerso Con</h1>
-  <form name="inscricao" netlify>
-    <input type="text" name="nome" placeholder="Nome completo" required>
-    <input type="email" name="email" placeholder="E-mail" required>
-    <input type="text" name="cidade" placeholder="Cidade" required>
-    <select name="categoria" required>
-      <option value="">Selecione a categoria</option>
-      <option value="visitante">Visitante</option>
-      <option value="creator">Creator</option>
-      <option value="expositor">Expositor</option>
-      <option value="apoiador">Apoiador</option>
-    </select>
-    <input type="text" name="roblox" placeholder="Link do perfil Roblox (opcional)">
-    <button type="submit">Enviar inscrição</button>
-  </form>
+  <div class="container">
+    <h1>Inscrição BloxVerso</h1>
+    <form name="inscricao" netlify>
+      <input type="text" name="nome" placeholder="Nome completo" required>
+      <input type="email" name="email" placeholder="E-mail" required>
+      <input type="text" name="cidade" placeholder="Cidade" required>
+      <input type="tel" name="whatsapp" placeholder="WhatsApp com DDD" required pattern="^\(?\d{2}\)?[\s-]?\d{4,5}-?\d{4}$" title="Digite um número válido com DDD">
+      
+      <select name="categoria" required>
+        <option value="">Selecione a categoria</option>
+        <option value="visitante">Visitante</option>
+        <option value="creator">Creator</option>
+        <option value="expositor">Expositor</option>
+        <option value="apoiador">Apoiador</option>
+      </select>
+      
+      <input type="text" name="roblox" placeholder="Link do perfil Roblox (opcional)">
+
+      <label>
+        <input type="checkbox" name="consentimento" required>
+        <span>Autorizo o uso dos dados fornecidos exclusivamente para personalização da minha experiência no evento.</span>
+      </label>
+
+      <button type="submit">Enviar inscrição</button>
+    </form>
+  </div>
 </body>
 </html>
