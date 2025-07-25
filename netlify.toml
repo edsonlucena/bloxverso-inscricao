@@ -6,6 +6,7 @@
   from = "/obrigado.html"
   to = "/obrigado.html"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/*"
