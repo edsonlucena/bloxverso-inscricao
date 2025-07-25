@@ -74,8 +74,17 @@
   <body>
     <div class="container">
       <h1>Pré‑inscrição – BloxVerso Con</h1>
-      <form name="pre-inscricao" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/obrigado.html">
+
+      <form
+        name="pre-inscricao"
+        method="POST"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+      >
+        <!-- Chave Netlify Forms -->
         <input type="hidden" name="form-name" value="pre-inscricao" />
+        <!-- Redirecionamento -->
+        <input type="hidden" name="redirect" value="/obrigado.html" />
 
         <label for="nome">Nome completo</label>
         <input type="text" id="nome" name="nome" required />
@@ -112,10 +121,16 @@
       </form>
     </div>
 
-    <!-- Form shadow para forçar detecção pelo Netlify Forms -->
-    <form name="pre-inscricao" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+    <!-- Form shadow para ativar detecção do Netlify Forms -->
+    <form 
+      name="pre-inscricao" 
+      method="POST" 
+      data-netlify="true" 
+      data-netlify-honeypot="bot-field" 
+      hidden
+    >
       <input type="hidden" name="form-name" value="pre-inscricao" />
-      <!-- campos para registro de todas as entradas -->
+      <input type="hidden" name="redirect" value="/obrigado.html" />
       <input type="text" name="nome" />
       <input type="tel" name="whatsapp" />
       <input type="email" name="email" />
@@ -125,7 +140,6 @@
       <input type="text" name="perfil_instagram" />
       <input type="text" name="perfil_tiktok" />
       <input type="checkbox" name="consentimento" />
-      <!-- honeypot -->
       <div hidden>
         <label>Não preencha este campo: <input name="bot-field" /></label>
       </div>
