@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Inscrição – BloxVerso Con</title>
+  <style>
+    body { font-family: Arial; margin: 30px; }
+    form { max-width: 500px; margin: auto; display: flex; flex-direction: column; gap: 10px; }
+    input, select, button { padding: 10px; font-size: 16px; }
+  </style>
+</head>
+<body>
+  <h1>Inscreva-se no BloxVerso Con</h1>
+  <form name="inscricao" netlify>
+    <input type="text" name="nome" placeholder="Nome completo" required>
+    <input type="email" name="email" placeholder="E-mail" required>
+    <input type="text" name="cidade" placeholder="Cidade" required>
+    <select name="categoria" required>
+      <option value="">Selecione a categoria</option>
+      <option value="visitante">Visitante</option>
+      <option value="creator">Creator</option>
+      <option value="expositor">Expositor</option>
+      <option value="apoiador">Apoiador</option>
+    </select>
+    <input type="text" name="roblox" placeholder="Link do perfil Roblox (opcional)">
+    <button type="submit">Enviar inscrição</button>
+  </form>
+</body>
+</html>
