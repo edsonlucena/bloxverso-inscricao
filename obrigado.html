@@ -1,63 +1,77 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inscrição Recebida – BloxVerso Con</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-    <style>
-      body {
-        font-family: 'Roboto', sans-serif;
-        background-color: #0d0d0d;
-        color: #fff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        margin: 0;
-        padding: 20px;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inscrição recebida – BloxVerso Con</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #0d0d0d;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
 
-      .container {
-        background-color: #1a1a1a;
-        padding: 40px;
-        border-radius: 10px;
-        width: 100%;
-        max-width: 500px;
-        box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
-        text-align: center;
-      }
+    .container {
+      background-color: #1a1a1a;
+      padding: 40px;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 500px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+      text-align: center;
+    }
 
-      h1 {
-        font-size: 28px;
-        margin-bottom: 20px;
-        color: #ffe600;
-      }
+    .logo {
+      display: block;
+      margin: 0 auto 24px auto;
+      width: 200px;
+    }
 
-      p {
-        font-size: 16px;
-        line-height: 1.6;
-        margin-bottom: 30px;
-      }
+    h1 {
+      font-size: 26px;
+      margin-bottom: 20px;
+      color: #ffe600;
+    }
 
-      a {
-        color: #ffe600;
-        text-decoration: underline;
-        font-weight: bold;
-      }
+    p {
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 30px;
+    }
 
-      a:hover {
-        color: #fff200;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <h1>Inscrição recebida!</h1>
-      <p>Obrigado por se pré-inscrever no <strong>BloxVerso Con</strong>.<br>
-      Seus dados foram recebidos com sucesso e serão utilizados para personalizar sua experiência no evento.</p>
-      <p>Caso tenha dúvidas ou queira acompanhar novidades, siga nosso perfil no Instagram:<br>
-        <a href="https://www.instagram.com/bloxversocon" target="_blank">@bloxversocon</a></p>
-    </div>
-  </body>
+    a.button {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #ffe600;
+      color: #000;
+      font-weight: bold;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    a.button:hover {
+      background-color: #fff200;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="logo.png" alt="BloxVerso Con" class="logo" />
+    <h1>Inscrição recebida com sucesso!</h1>
+    <p>
+      Agradecemos pela sua pré-inscrição no BloxVerso Con.<br />
+      Em breve você receberá novidades exclusivas sobre o evento.
+    </p>
+    <a href="/index.html" class="button">Enviar outra inscrição</a>
+  </div>
+</body>
 </html>
