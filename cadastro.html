@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cadastro – BloxVerso Con</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #0d0d0d;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 40px;
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+    }
+
+    h1, h2 {
+      color: #ffe600;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .consent {
+      margin-top: 20px;
+      font-size: 13px;
+    }
+
+    button {
+      background-color: #ffe600;
+      color: #000;
+      font-weight: bold;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 30px;
+      width: 100%;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .section {
+      margin-top: 20px;
+      display: none;
+    }
+
+    .comunicado {
+      margin-bottom: 30px;
+      background-color: #262626;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .comunicado h2 {
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="comunicado">
+      <h2>Segurança em Primeiro Lugar</h2>
+      <p>
+        O BloxVerso Con é um evento pensado para oferecer uma experiência memorável a jovens jogadores e criadores do universo Roblox.
+        No entanto, antes de proporcionar diversão, temos um compromisso inegociável com a <strong>segurança de todos os participantes</strong>.
+      </p>
+      <p>
+        Por isso, adotamos uma estrutura de pré-inscrição com camadas adicionais de verificação — como a distinção entre menores e maiores de idade, exigência de responsável legal e validação documental.
+        Essas medidas não são apenas precauções: são uma demonstração clara de que <strong>não abrimos mão da ética, da proteção de dados e da responsabilidade institucional</strong>.
+      </p>
+    </div>
+
+    <h1>Cadastro – BloxVerso Con</h1>
+    <form name="cadastro-bloxverso" method="POST" data-netlify="true" action="obrigado.html">
+      <label for="nome">Nome completo</label>
+      <input type="text" id="nome" name="nome" required />
+
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="idade">Você é:</label>
+      <select id="faixa" name="faixa" required onchange="mostrarSecao()">
+        <option value="">Selecione</option>
+        <option value="menor">Menor de 18 anos</option>
+        <option value="maior">Maior de 18 anos</option>
+      </select>
+
+      <div id="menor" class="section">
+        <label for="idade_menor">Idade</label>
+        <input type="number" name="idade_menor" min="6" max="17" />
+
+        <label for="responsavel">Nome do responsável</label>
+        <input type="text" name="responsavel" />
+
+        <label for="cpf_responsavel">CPF do responsável</label>
+        <input type="text" name="cpf_responsavel" placeholder="000.000.000-00" />
+
+        <div class="consent">
+          <input type="checkbox" required /> Autorizo o uso dos dados fornecidos para fins exclusivos de personalização e segurança no evento.
+        </div>
+      </div>
+
+      <div id="maior" class="section">
+        <label for="idade_maior">Idade</label>
+        <input type="number" name="idade_maior" min="18" max="99" />
+
+        <label for="cpf">CPF</label>
+        <input type="text" name="cpf" id="cpf" placeholder="000.000.000-00" required />
+
+        <label for="instagram">Perfil do Instagram</label>
+        <input type="text" name="instagram" placeholder="@seuperfil" />
+
+        <label for="tiktok">Perfil do TikTok</label>
+        <input type="text" name="tiktok" placeholder="@seuperfil" />
+
+        <div class="consent">
+          <input type="checkbox" required /> Declaro estar ciente de que participo de um ambiente com menores de idade e me comprometo com a responsabilidade solidária da minha conduta.
+        </div>
+      </div>
+
+      <label for="whatsapp">WhatsApp (opcional)</label>
+      <input type="text" name="whatsapp" placeholder="(00) 90000-0000" />
+
+      <button type="submit">Enviar cadastro</button>
+    </form>
+  </div>
+
+  <script>
+    function mostrarSecao() {
+      const selecao = document.getElementById('faixa').value;
+      document.getElementById('menor').style.display = selecao === 'menor' ? 'block' : 'none';
+      document.getElementById('maior').style.display = selecao === 'maior' ? 'block' : 'none';
+    }
+
+    function validarCPF(cpf) {
+      cpf = cpf.replace(/[^\d]+/g, '');
+      if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) return false;
+
+      let soma = 0, resto;
+      for (let i = 1; i <= 9; i++) soma += parseInt(cpf[i - 1]) * (11 - i);
+      resto = (soma * 10) % 11;
+      if (resto === 10 || resto === 11) resto = 0;
+      if (resto !== parseInt(cpf[9])) return false;
+
+      soma = 0;
+      for (let i = 1; i <= 10; i++) soma += parseInt(cpf[i - 1]) * (12 - i);
+      resto = (soma * 10) % 11;
+      if (resto === 10 || resto === 11) resto = 0;
+      return resto === parseInt(cpf[10]);
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.querySelector("form");
+      form.addEventListener("submit", function (e) {
+        const faixa = document.getElementById("faixa").value;
+        if (faixa === "maior") {
+          const cpfInput = document.getElementById("cpf");
+          if (!validarCPF(cpfInput.value)) {
+            e.preventDefault();
+            alert("CPF inválido. Verifique e tente novamente.");
+            cpfInput.focus();
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
