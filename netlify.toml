@@ -3,18 +3,7 @@
   command = ""
 
 [[redirects]]
-  from = "/cadastro.html"
-  to = "/cadastro.html"
-  status = 200
-  force = true
-
-[[redirects]]
   from = "/obrigado.html"
   to = "/obrigado.html"
   status = 200
   force = true
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
